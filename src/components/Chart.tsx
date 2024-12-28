@@ -10,6 +10,7 @@ import {
   Legend,
   Filler,
 } from "chart.js";
+import { TooltipItem } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { useState, useRef, useEffect } from "react";
 import { FiMaximize2 } from "react-icons/fi";
@@ -90,8 +91,11 @@ export default function LineChart() {
       legend: { display: false },
       tooltip: {
         callbacks: {
-          title: (tooltipItems: any[]) => `Point: ${tooltipItems[0].label}`,
-          label: (tooltipItem: any) => `$${tooltipItem.raw.toFixed(2)} USD`,
+          title: (tooltipItems: TooltipItem<"line">[]) => `Point: ${tooltipItems[0].label}`,
+          label: (tooltipItem: TooltipItem<"line">) => {
+            const value = tooltipItem.raw as number; // Cast raw to a number
+            return `$${value.toFixed(2)} USD`;
+          },
         },
       },
       annotation: {
