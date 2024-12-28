@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('./circular-std.ttf') format('truetype');
+}
+
+
+:root {
+  --font-geist-sans: 'Geist Sans', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+}
+
+body {
+  max-width: 70vw;
+  font-family: 'Circular Std';
+  margin: auto;
+  padding-top: 3rem;
+}
+
+/* Adding some custom CSS here  */
+
+.box{
+  position: absolute;
+  width: fit-content;
+  color: white;
+  border-radius: 6px;
+}
+
+.box-1{
+  background: #1A243A;
+  top: 8rem;
+  right: 0px;
+  margin-right: -45px;
+  padding: 5px 20px;
+}
+
+.box-2{
+  bottom: 10rem;
+  right: 0px;
+  background-color: #4B40EE;
+  margin-right: -40px;
+  padding: 5px 20px;
+}
+
+.main-container{
+  width: 100%;
+  border-radius: 10px;
+}
